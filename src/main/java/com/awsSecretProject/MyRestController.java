@@ -11,7 +11,5 @@ public class MyRestController {
 public String welcome() {
     return new String("<h1>Hello World</h1>");
 }
-public void hello(){
-    
-}
+
 }

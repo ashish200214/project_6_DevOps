@@ -23,8 +23,8 @@ Finally, Jenkins connects to the Kubernetes master node through SSH and applies 
 
 
 ## Project Overview
-PDF Name Documentation :  
-This project demonstrates a **complete CI/CD pipeline** for deploying a Java application to a Kubernetes cluster using **Jenkins automation**.
+****PDF Name Documentation :  Project_5.pdf
+****This project demonstrates a **complete CI/CD pipeline** for deploying a Java application to a Kubernetes cluster using **Jenkins automation**.
 
 The pipeline performs the following tasks automatically:
 

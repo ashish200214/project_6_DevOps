@@ -1,7 +1,29 @@
 # CI/CD Pipeline using Jenkins, Docker, Trivy and Kubernetes
+## Security Gating Logic
+
+In this project, security scanning is added inside the CI/CD pipeline to ensure that only secure Docker images are deployed.
+
+After the Docker image is built, Jenkins scans the image using **Trivy**. The scan checks the image for known vulnerabilities.
+
+If **critical vulnerabilities** are detected, the pipeline fails and the deployment step is stopped. This prevents insecure images from reaching the Kubernetes cluster.
+
+If no critical issues are found, the pipeline continues and the image is pushed to Docker Hub and deployed to Kubernetes.
+
+---
+
+## Deployment Workflow
+
+The deployment process is automated using Jenkins.
+
+Whenever code is pushed to GitHub, Jenkins pulls the latest code and builds the application using Maven. A Docker image is then created from the application.
+
+The image is scanned using Trivy. If the scan passes, Jenkins pushes the image to Docker Hub.
+
+Finally, Jenkins connects to the Kubernetes master node through SSH and applies the Kubernetes deployment file. Kubernetes then deploys the application and exposes it using a NodePort service.
+
 
 ## Project Overview
-
+PDF Name Documentation :  
 This project demonstrates a **complete CI/CD pipeline** for deploying a Java application to a Kubernetes cluster using **Jenkins automation**.
 
 The pipeline performs the following tasks automatically:
